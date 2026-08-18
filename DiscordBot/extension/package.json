@@ -1,0 +1,11 @@
+{
+  "name": "@discordbot/extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome MV3 extension that harvests Bittensor Discord into the local ingest server",
+  "scripts": {
+    "test": "node --test"
+  },
+  "_note": "There is no build step. Chrome loads this folder directly via Load unpacked; it ignores this file. It exists so Node can run the tests in tests/ as ES modules."
+}

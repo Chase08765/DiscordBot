@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "🤖 Bittensor Discord Collector",
+  "version": "0.3.0",
+  "description": "Harvests messages, channels and member roles from the Bittensor Discord server into a local SQLite knowledge base.",
+
+  "permissions": ["storage", "tabs", "scripting", "alarms"],
+
+  "host_permissions": [
+    "https://discord.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Bittensor Discord Collector"
+  }
+}

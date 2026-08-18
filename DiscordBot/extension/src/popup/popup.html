@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bittensor Discord Collector</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🤖 Bittensor Collector</h1>
+      <span id="server-dot" class="dot" title="Ingest server"></span>
+    </header>
+
+    <!-- The number that matters: what is actually in the database.
+         Read from the server, so it is correct even when nothing is running. -->
+    <section class="hero">
+      <div class="hero__n" id="db-total">—</div>
+      <div class="hero__l">messages in database</div>
+    </section>
+
+    <section class="grid">
+      <div class="cell"><span class="cell__n" id="db-channels">—</span><span class="cell__l">channels</span></div>
+      <div class="cell"><span class="cell__n" id="db-members">—</span><span class="cell__l">members</span></div>
+      <div class="cell"><span class="cell__n cell__n--new" id="run-new">0</span><span class="cell__l">new this run</span></div>
+    </section>
+
+    <!-- Current activity. Replaces the log tab: one line, always the latest. -->
+    <section class="status">
+      <div class="status__bar"><div id="status-fill" class="status__fill"></div></div>
+      <div class="status__row">
+        <span id="status-badge" class="badge">idle</span>
+        <span id="status-text" class="status__text">Not running</span>
+      </div>
+    </section>
+
+    <div id="error" class="error error--hidden"></div>
+
+    <section class="actions">
+      <button id="btn-collect" class="btn btn--primary">▶️ Collect messages</button>
+      <button id="btn-watch" class="btn">👁️ Watch for new</button>
+      <button id="btn-roles" class="btn">🎫 Resolve member roles</button>
+      <div class="actions__row">
+        <button id="btn-discover" class="btn btn--small">🔍 Check channels</button>
+        <button id="btn-stop" class="btn btn--small btn--danger" disabled>⏹️ Stop</button>
+      </div>
+    </section>
+
+    <footer>
+      <span id="footer-hint">Detailed logs: right-click → Inspect → Console</span>
+    </footer>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
